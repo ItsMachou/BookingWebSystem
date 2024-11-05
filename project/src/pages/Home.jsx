@@ -1,13 +1,11 @@
 import React from "react";
-import Hero from "../components/Hero/Hero";
 import NatureVid from "../assets/video/main.mp4";
 import BlogsComp from "../components/Blogs/BlogsComp";
 import Places from "../components/Places/Places";
-import Testimonial from "../components/Testimonial/Testimonial";
 import Banner from "../components/Banner/Banner";
 import BannerPic from "../components/BannerPic/BannerPic";
-import BannerImg from "../assets/cover-women.jpg";
-import Banner2 from "../assets/travel-cover2.jpg";
+import BannerImg from "../assets/banner1.jpg";
+import Banner2 from "../assets/banner1.jpg";
 import OrderPopup from "../components/OrderPopup/OrderPopup";
 import BackgroundImage from "../assets/background.png";
 import Cloud1 from "../assets/background2.png";
@@ -26,16 +24,16 @@ const Home = () => {
     backgroundImage: `url(${BackgroundImage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    minHeight: "100vh",
+    minHeight: "600vh",
     position: "relative",
     overflow: "hidden",
   };
 
   const cloud1Style = {
     position: "absolute",
-    top: "10%",
-    left: "10%",
-    width: "300px",
+    top: "42.1%",
+    left: "5%",
+    width: "455px",
     height: "auto",
     opacity: 0.8,
   };
@@ -54,6 +52,7 @@ const Home = () => {
     bottom: "5%",
     right: "5%",
     width: "500px",
+    top: "42%",
     height: "auto",
 
     animation: "fly 10s linear infinite",
@@ -90,15 +89,11 @@ const Home = () => {
       </div>
 
       <div className="relative z-10">
-        <div className="h-[700px] relative">
-          <Hero />
-        </div>
+        <div className="h-[700px] relative"></div>
         <Places handleOrderPopup={handleOrderPopup} />
         <BannerPic img={BannerImg} />
         <BlogsComp />
         <Banner />
-        <BannerPic img={Banner2} />
-        <Testimonial />
         <OrderPopup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
       </div>
     </div>
