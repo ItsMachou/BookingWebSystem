@@ -2,7 +2,7 @@ import React from "react";
 import BlogCard from "./BlogCard";
 import Img1 from "../../assets/places/tajmahal.jpg";
 import Img2 from "../../assets/places/water.jpg";
-import Img3 from "../../assets/places/boat.jpg";
+import Img3 from "../../assets/places/japan.jpg";
 import Img4 from "../../assets/places/Singapore.jpg";
 import Img5 from "../../assets/places/thailand.jpg";
 import Img11 from "../../assets/places/dubai.jpg";
