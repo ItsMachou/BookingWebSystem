@@ -1,20 +1,67 @@
 import React, { useState } from "react";
+import { supabase } from '../../utils/supabaseClient';
 import backgroundImage from "../../assets/new york.jpeg";
 
 const LoginForm = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [username, setUsername] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
-  const handleAuth = (e) => {
+  const handleAuth = async (e) => {
     e.preventDefault();
+    setError(null);
+
     if (isSignUp) {
-      // Handle signup logic here
-      console.log("Signing up with:", { username, email, password });
+      // Handle sign-up logic
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+      });
+
+      if (error) {
+        setError(error.message);
+      } else {
+        // Insert additional user data into the accounts table
+        const user = supabase.auth.user();
+        const { error: insertError } = await supabase
+          .from('accounts')
+          .insert([
+            {
+              username,
+              firstname,
+              lastname,
+              email,
+              id_acc: user.id,
+              role: 'user', // default role
+              created_at: new Date(),
+              updated_at: new Date(),
+            },
+          ]);
+
+        if (insertError) {
+          setError(insertError.message);
+        } else {
+          // Handle successful sign-up
+          console.log("Signed up successfully:", data);
+        }
+      }
     } else {
-      // Handle login logic here
-      console.log("Logging in with:", { email, password });
+      // Handle login logic
+      const { error } = await supabase.auth.signIn({
+        email,
+        password,
+      });
+
+      if (error) {
+        setError(error.message);
+      } else {
+        // Handle successful login
+        console.log("Logged in successfully");
+      }
     }
   };
 
@@ -32,19 +79,47 @@ const LoginForm = () => {
 
         <form onSubmit={handleAuth} className="space-y-4">
           {isSignUp && (
-            <div>
-              <label className="block mb-1" htmlFor="username">
-                Username
-              </label>
-              <input
-                type="text"
-                id="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className="w-full p-2 border rounded bg-gray-200 focus:outline-none"
-                required
-              />
-            </div>
+            <>
+              <div>
+                <label className="block mb-1" htmlFor="username">
+                  Username
+                </label>
+                <input
+                  type="text"
+                  id="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="w-full p-2 border rounded bg-gray-200 focus:outline-none"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block mb-1" htmlFor="firstname">
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  id="firstname"
+                  value={firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
+                  className="w-full p-2 border rounded bg-gray-200 focus:outline-none"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block mb-1" htmlFor="lastname">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  id="lastname"
+                  value={lastname}
+                  onChange={(e) => setLastname(e.target.value)}
+                  className="w-full p-2 border rounded bg-gray-200 focus:outline-none"
+                  required
+                />
+              </div>
+            </>
           )}
 
           <div>
@@ -74,6 +149,8 @@ const LoginForm = () => {
               required
             />
           </div>
+
+          {error && <p className="text-red-500">{error}</p>}
 
           <button
             type="submit"
