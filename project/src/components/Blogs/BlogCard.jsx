@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BlogCard = ({ image, date, title, description, author }) => {
+const BlogCard = ({
+  image,
+  date,
+  title,
+  description,
+  author,
+  placeholderImage,
+}) => {
   return (
     <>
       <Link
@@ -9,7 +16,7 @@ const BlogCard = ({ image, date, title, description, author }) => {
         onClick={() => {
           window.scrollTo(0, 0);
         }}
-        state={{ image, date, title, description, author }}
+        state={{ image, date, title, description, author, placeholderImage }}
       >
         <div className="p-4 shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl rounded-lg bg-white dark:bg-slate-950 dark:text-white relative">
           <div className="overflow-hidden rounded-lg relative">

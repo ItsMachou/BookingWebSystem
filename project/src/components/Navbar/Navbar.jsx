@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../../assets/logo22.png";
-import { NavLink, Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate, useLocation } from "react-router-dom"; // Import useLocation
 import { FaCaretDown } from "react-icons/fa";
 import ResponsiveMenu from "./ResponsiveMenu";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
@@ -26,20 +26,20 @@ export const NavbarLinks = [
 
 const Navbar = ({ handleOrderPopup }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
+  const location = useLocation(); // Get the current location/path
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
+  const getLinkClass = (path) => {
+    return location.pathname === path ? "text-green-400" : "text-white";
+  };
+
   return (
     <>
-      <nav className="fixed top-0 right-0 w-full z-50 bg-blue-600 backdrop-blur-sm text-white shadow-md">
-        <div className="bg-gradient-to-r from-primary to-secondary text-white ">
-          <div className="container py-[2px] sm:block hidden">
-            <div className="flex items-center justify-between"></div>
-          </div>
-        </div>
+      <nav className="fixed top-0 right-0 w-full z-50 bg-blue-600 backdrop-blur-sm text-white shadow-white">
         <div className="container py-3 sm:py-0">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4 font-bold text-2xl">
@@ -48,37 +48,39 @@ const Navbar = ({ handleOrderPopup }) => {
               </Link>
             </div>
             <div className="hidden md:block">
-              <ul className="flex items-center gap-6 ">
+              <ul className="flex items-center gap-6">
                 <li className="py-4">
-                  <NavLink to="/" activeClassName="active">
+                  <Link to="/" className={getLinkClass("/")}>
                     Home
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="py-4">
-                  <NavLink to="/blogs" activeClassName="active">
+                  <Link to="/blogs" className={getLinkClass("/blogs")}>
                     Blogs
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="py-4">
-                  <NavLink to="/best-places" activeClassName="active">
+                  <Link
+                    to="/best-places"
+                    className={getLinkClass("/best-places")}
+                  >
                     Best Places
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="py-4">
-                  <NavLink to="/about" activeClassName="active">
+                  <Link to="/about" className={getLinkClass("/about")}>
                     About
-                  </NavLink>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className="flex items-center gap-4">
               <button
                 className="bg-gradient-to-r from-primary to-secondary hover:bg-bg-gradient-to-r hover:from-secondary hover:bg-primary transition-all duration-600 text-blue px-3 py-1 rounded-full"
-                onClick={() => navigate("/login")} // Navigate to login
+                onClick={() => navigate("/login")}
               >
                 Login
               </button>
-              {/* Mobile Hamburger icon */}
               <div className="md:hidden block">
                 {showMenu ? (
                   <HiMenuAlt1

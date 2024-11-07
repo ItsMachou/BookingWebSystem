@@ -24,7 +24,7 @@ const Home = () => {
     backgroundImage: `url(${BackgroundImage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    minHeight: "600vh",
+    minHeight: "400vh",
     position: "relative",
     overflow: "hidden",
   };
@@ -73,8 +73,6 @@ const Home = () => {
 
   return (
     <div style={mainStyle}>
-      {/* Cloud and Airplane images */}
-      <img src={Cloud1} alt="Cloud 1" style={cloud1Style} />
       <img src={Airplane} alt="Airplane" style={airplaneStyle} />
 
       <div className="absolute inset-0">
