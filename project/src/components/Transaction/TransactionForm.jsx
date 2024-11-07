@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import { useNavigate } from "react-router-dom";
+import { createClient } from "@supabase/supabase-js";
 
-const TransactionForm = ({ onSubmit }) => {
+// Initialize Supabase client
+const supabaseUrl = "https://your-supabase-url.supabase.co"; // Replace with your Supabase URL
+const supabaseAnonKey = "your-supabase-anon-key"; // Replace with your Supabase anon key
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+const TransactionForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
@@ -9,50 +15,46 @@ const TransactionForm = ({ onSubmit }) => {
   const [adultCount, setAdultCount] = useState("");
   const [childrenCount, setChildrenCount] = useState("");
   const [date, setDate] = useState("");
-  const navigate = useNavigate(); // Initialize navigate for navigation
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation
-    if (
-      !name ||
-      !email ||
-      !number ||
-      !packageType ||
-      !adultCount ||
-      !childrenCount ||
-      !date
-    ) {
+    if (!name || !email || !number || !packageType || !adultCount || !childrenCount || !date) {
       alert("Please fill in all fields.");
       return;
     }
 
-    // Prepare transaction data
     const transactionData = {
       name,
       email,
-      number,
-      packageType,
-      adultCount,
-      childrenCount,
-      date,
+      contact_no: number,
+      package_id: packageType === "Standard" ? 1 : packageType === "Premium" ? 2 : 3, // Assuming package IDs
+      adult: parseInt(adultCount),
+      children: parseInt(childrenCount),
+      date_of_departure: date,
+      date_booked: new Date().toISOString().split("T")[0], // Current date as booking date
     };
 
-    // Call the onSubmit function passed from the parent component
-    onSubmit(transactionData);
+    try {
+      const { data, error } = await supabase.from("booking").insert([transactionData]);
+      if (error) throw error;
 
-    // Reset form fields
-    setName("");
-    setEmail("");
-    setNumber("");
-    setPackageType("");
-    setAdultCount("");
-    setChildrenCount("");
-    setDate("");
+      alert("Booking successfully made!");
+      navigate("/Booking");
 
-    // Navigate to BookingPage after submission
-    navigate("/Booking"); // Adjust this path if needed
+      // Reset form fields
+      setName("");
+      setEmail("");
+      setNumber("");
+      setPackageType("");
+      setAdultCount("");
+      setChildrenCount("");
+      setDate("");
+    } catch (error) {
+      console.error("Error making booking:", error.message);
+      alert("There was an error making your booking. Please try again.");
+    }
   };
 
   return (
@@ -96,17 +98,13 @@ const TransactionForm = ({ onSubmit }) => {
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-1">
-          Type of Package
-        </label>
+        <label className="block text-sm font-medium mb-1">Type of Package</label>
         <select
           value={packageType}
           onChange={(e) => setPackageType(e.target.value)}
           className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
         >
-          <option value="" disabled>
-            Select a package
-          </option>
+          <option value="" disabled>Select a package</option>
           <option value="Standard">Standard</option>
           <option value="Premium">Premium</option>
           <option value="Deluxe">Deluxe</option>
