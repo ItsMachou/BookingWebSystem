@@ -1,7 +1,7 @@
 import React from "react";
 import PlaceCard from "./PlaceCard";
 import Img1 from "../../assets/places/boracay.jpg";
-import Img2 from "../../assets/places/puerto princesa.jpg";
+import Img2 from "../../assets/places/puertoprincesa.jpg"; // Ensure the file name matches
 import Img3 from "../../assets/places/baler.jpg";
 import Img4 from "../../assets/places/japan.jpg";
 import Img5 from "../../assets/places/tajmahal.jpg";
@@ -22,68 +22,58 @@ const PlacesData = [
     title: "Puerto Princesa",
     location: "Palawan",
     description:
-      "Puerto Princesa is known for its stunning natural wonders. This subterranean river stretches beneath limestone karsts, offering a breathtaking experience for nature lovers.",
-    price: 5000,
-    type: "Relax with Nature",
+      "Known for its stunning underground river and beautiful limestone cliffs, Puerto Princesa is a must-visit destination in the Philippines.",
+    price: 4500,
+    type: "Adventure",
   },
   {
     img: Img3,
     title: "Baler",
     location: "Aurora",
     description:
-      "The waves at Sabang Beach make it a perfect spot for beginners and pros alike. Known as the birthplace of surfing in the Philippines",
-    price: 5000,
-    type: "Relax with Nature",
+      "A popular surfing destination, Baler offers great waves, beautiful beaches, and a rich history.",
+    price: 3000,
+    type: "Surfing",
   },
   {
     img: Img4,
-    title: "Tokyo",
-    location: "Japan",
+    title: "Japan",
+    location: "Tokyo",
     description:
-      "Discover the serene beauty of Tokyo's most revered shrine, a sanctuary of tradition amidst the city's vibrant energy.",
-    price: 5000,
-    type: "Cultural Relax",
+      "Experience the vibrant culture, delicious cuisine, and stunning landscapes of Japan.",
+    price: 10000,
+    type: "Cultural",
   },
   {
     img: Img5,
     title: "Taj Mahal",
-    location: "India",
+    location: "Agra",
     description:
-      "Set on the south bank of the Yamuna River in Agra, the Taj Mahal is an exquisite ivory-white marble mausoleum, celebrated for its stunning beauty and historical significance.",
-    price: 5000,
-    type: "Cultural Relax",
+      "A symbol of love and one of the most iconic landmarks in the world, the Taj Mahal is a must-see.",
+    price: 8000,
+    type: "Historical",
   },
   {
     img: Img6,
     title: "Burj Khalifa",
     location: "Dubai",
     description:
-      "Dubai is a city of contrasts, where modern skyscrapers meet ancient traditions. Experience the luxury and innovation of the Burj Khalifa, the world’s tallest building.",
-    price: 5000,
-    type: "Cultural Relax",
+      "The tallest building in the world, Burj Khalifa offers breathtaking views and luxurious experiences.",
+    price: 12000,
+    type: "Modern",
   },
 ];
 
-const Places = ({ handleOrderPopup }) => {
+const Places = () => {
   return (
-    <>
-      <div className="dark:bg-gray-900 dark:text-white bg-gray-50 py-10">
-        <section data-aos="fade-up" className="container ">
-          <h1 className=" my-8 border-l-8 border-primary/50 py-2 pl-2 text-3xl font-bold">
-            Best Places to Visit
-          </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {PlacesData.map((item, index) => (
-              <PlaceCard
-                handleOrderPopup={handleOrderPopup}
-                key={index}
-                {...item}
-              />
-            ))}
-          </div>
-        </section>
+    <div className="container mx-auto p-4">
+      <h2 className="my-4 text-2xl font-semibold">Popular Destinations</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+        {PlacesData.map((place, index) => (
+          <PlaceCard key={index} {...place} />
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 
