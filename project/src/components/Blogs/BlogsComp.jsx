@@ -1,83 +1,101 @@
 import React from "react";
 import BlogCard from "./BlogCard";
 import Img1 from "../../assets/places/tajmahal.jpg";
-import Img2 from "../../assets/places/water.jpg";
+import Img2 from "../../assets/places/maldives2.jpg";
 import Img3 from "../../assets/places/japan.jpg";
-import Img4 from "../../assets/places/Singapore.jpg";
-import Img5 from "../../assets/places/thailand.jpg";
+import Img4 from "../../assets/places/merlion2.jpg";
+import Img5 from "../../assets/places/temple.jpg";
 import Img11 from "../../assets/places/dubai.jpg";
 
 // New images for local (Philippine) destinations
 import Img6 from "../../assets/places/boracay.jpg";
-import Img7 from "../../assets/places/puerto princesa.jpg";
+import Img7 from "../../assets/places/puertoprincesa2.jpg";
 import Img8 from "../../assets/places/baler.jpg";
-import Img9 from "../../assets/places/cavite.jpg";
-import Img10 from "../../assets/places/bukidnon.jpg";
+import Img9 from "../../assets/places/caviteshrine.jpg";
+import Img10 from "../../assets/places/bukidnon2.jpg";
 import Img12 from "../../assets/places/cebu.jpg";
 
+//Placeholder images
+import Img13 from "../../assets/places/tajmahal2.jpg";
+import Img14 from "../../assets/places/maldives.jpg";
+import Img15 from "../../assets/places/mtfuji.jpg";
+import Img16 from "../../assets/places/merlion.jpeg";
+import Img17 from "../../assets/places/emeraldbuddha.jpg";
+import Img18 from "../../assets/places/burjkhalifa.jpg";
+import Img19 from "../../assets/places/boracaybeach.png";
+import Img20 from "../../assets/places/puertoprincesa.jpg";
+import Img21 from "../../assets/places/BalerAurora.jpg";
+import Img22 from "../../assets/places/etivac.jpg";
+import Img23 from "../../assets/places/bukidnoners.jpg";
+import Img24 from "../../assets/places/cebuano.jpg";
 const BlogsData = [
   // International Spots
   {
     id: 1,
     image: Img1,
-    title: "Top Places to Visit in India",
+    title: "Taj Mahal",
     description:
-      "India offers an incredible blend of history, culture, and natural beauty. From the iconic Taj Mahal in Agra, a symbol of love and architectural wonder, to the pink-hued city of Jaipur with its historic palaces, India captivates travelers at every turn. Venture south to Kerala to experience serene backwaters, lush landscapes, and vibrant traditions, or explore the bustling markets and towering forts of Delhi. India’s diverse regions offer everything from Himalayan adventures to tranquil beaches, making it a top choice for world travelers.",
+      "The Taj Mahal stands as an enduring symbol of love and architectural grandeur in Agra, India. This breathtaking monument, built by Emperor Shah Jahan for his beloved wife, Mumtaz Mahal, captivates visitors with its flawless white marble facade, intricate carvings, and majestic symmetry. Framed by lush gardens and reflecting pools, the Taj Mahal represents a pinnacle of Mughal architecture, drawing millions to experience its serene beauty and historical significance. Surrounding Agra, visitors can also explore the historic Agra Fort, a UNESCO World Heritage Site, and the colorful markets that reflect India’s vibrant culture and artisanal traditions. The Taj Mahal remains a must-see destination, embodying both India's romantic heritage and architectural brilliance.",
     author: "Travel Writer",
     date: "April 22, 2024",
     category: "International",
+    placeholderImage: Img13, // Add your placeholder image path here
   },
   {
     id: 2,
     image: Img2,
-    title: "Top Places to Visit in the US",
+    title: "Maldives",
     description:
-      "The United States is a vast and varied landscape of experiences, from bustling cities to breathtaking national parks. In New York City, visitors can enjoy iconic sights like Times Square, the Statue of Liberty, and Central Park. Travel west to the Grand Canyon for one of nature’s most awe-inspiring sights, or experience the glamour and excitement of Hollywood in Los Angeles. With destinations like the beaches of Hawaii, the Rocky Mountains, and historic New Orleans, the US offers something unforgettable for every type of traveler.",
+      "The Maldives offers a paradise of turquoise waters, pristine white-sand beaches, and luxurious resorts that promise relaxation and rejuvenation. This island nation, located in the heart of the Indian Ocean, is renowned for its vibrant coral reefs and abundant marine life, making it a premier destination for snorkeling and diving enthusiasts. From overwater bungalows offering breathtaking ocean views to serene spa retreats surrounded by tropical flora, the Maldives embodies the perfect getaway for romance, adventure, or peaceful solitude. Whether watching a stunning sunset over the Indian Ocean or dining under starlit skies, the Maldives provides an unparalleled experience of natural beauty and tranquility.",
     author: "Explorer",
     date: "April 22, 2024",
     category: "International",
+    placeholderImage: Img14,
   },
   {
     id: 3,
     image: Img3,
-    title: "Top Places to Visit in Japan",
+    title: "Mt Fuji",
     description:
-      "Japan seamlessly blends ancient traditions with cutting-edge modernity, making it a must-visit destination. Begin in Tokyo, where neon-lit skyscrapers and bustling streets offer endless excitement, from high-end shopping districts to historic temples. Kyoto charms visitors with its tranquil gardens, ancient shrines, and seasonal cherry blossoms, while Osaka is famous for its vibrant food scene and welcoming locals. Japan’s rural areas, including the scenic mountains and hot springs of Hokkaido, provide peaceful retreats for a truly diverse travel experience.",
+      "Mt. Fuji, Japan’s most iconic peak, is a symbol of natural beauty and spiritual significance. This sacred mountain, with its perfectly symmetrical cone, has inspired artists and pilgrims alike for centuries. Rising majestically over 3,700 meters, it offers a stunning sight, especially when its snow-capped summit reflects in nearby lakes during cherry blossom season or autumn foliage. Visitors can explore the Fuji Five Lakes region for scenic hiking, boating, and hot springs, or embark on the challenge of climbing to the summit. With views spanning distant cities and forests, Mt. Fuji captures the essence of Japan’s harmonious blend of nature and spirituality, making it a must-visit landmark.",
     author: "Culture Enthusiast",
     date: "April 22, 2024",
     category: "International",
+    placeholderImage: Img15,
   },
   {
     id: 4,
     image: Img4,
-    title: "Top Places to Visit in Singapore",
+    title: "Merlion",
     description:
-      "Singapore is a vibrant city-state that captivates with its stunning blend of nature and urban design. Discover the futuristic Gardens by the Bay, where towering Supertrees illuminate the night sky, or stroll through the bustling streets of Chinatown and Little India to experience diverse cultures and flavors. The Marina Bay Sands offers breathtaking skyline views, while Sentosa Island provides beaches and thrilling attractions for families. Singapore’s efficient public transport makes it easy to explore this innovative city packed with world-class experiences.",
+      "The Merlion, Singapore’s iconic symbol, represents the city's fascinating blend of rich heritage and modern innovation. This half-fish, half-lion statue, perched at Marina Bay, embodies Singapore’s origin as a fishing village and its strength as a city-state. Visitors to the Merlion Park enjoy panoramic views of Marina Bay Sands, the ArtScience Museum, and Singapore’s dazzling skyline. Beyond the Merlion, Singapore offers a world of experiences: from the lush Gardens by the Bay, with its Supertrees that light up the night, to vibrant cultural neighborhoods like Chinatown and Little India. Singapore’s efficient infrastructure and multicultural flair make it a dynamic and accessible destination for global travelers.",
     author: "Travel Blogger",
     date: "May 15, 2024",
     category: "International",
+    placeholderImage: Img16,
   },
   {
     id: 5,
     image: Img5,
-    title: "Top Places to Visit in Thailand",
+    title: "The Temple of Emerald Buddha",
     description:
-      "Thailand’s appeal lies in its diverse landscapes, rich culture, and welcoming spirit. Bangkok, the capital, is a lively mix of ancient temples and modern shopping, with the Grand Palace and Wat Arun as highlights. Escape to Phuket or Koh Samui for stunning beaches, water sports, and vibrant nightlife. Northern Thailand offers lush mountains and hill tribe villages, where Chiang Mai and Chiang Rai provide a quieter, culturally rich experience. Thailand is a destination that rewards exploration, with friendly locals and endless adventure.",
+      "The Temple of the Emerald Buddha, or Wat Phra Kaew, is Thailand’s most revered temple, located within the Grand Palace complex in Bangkok. Housing a jade statue of the Buddha dating back to the 15th century, this sacred site attracts millions seeking both spiritual reflection and admiration of its architectural grandeur. The temple complex dazzles with golden spires, intricate murals, and detailed sculptures depicting Thai mythology. Beyond Bangkok, Thailand offers serene beaches in Phuket, cultural richness in Chiang Mai, and bustling markets filled with unique crafts and flavors. The Temple of the Emerald Buddha stands at the heart of Thailand’s heritage, embodying its spiritual and artistic essence.",
     author: "Adventure Seeker",
     date: "June 10, 2024",
     category: "International",
+    placeholderImage: Img17,
   },
   {
     id: 11,
     image: Img11,
-    title: "Top Places to Visit in Dubai",
+    title: "Burj Khalifa",
     description:
-      "Dubai is a city of contrasts, where ultra-modern skyscrapers meet ancient traditions. Experience the luxury and innovation of the Burj Khalifa, the world’s tallest building, and shop at the extravagant Dubai Mall. Take a desert safari for a taste of Bedouin life, complete with camel rides and dune bashing. Visit the Dubai Marina for stunning waterfront views, or explore the vibrant souks that showcase Dubai's rich heritage. With luxury hotels, pristine beaches, and an international food scene, Dubai is a dazzling and unique travel destination.",
+      "The Burj Khalifa in Dubai, the tallest structure in the world, is an architectural marvel that defines Dubai's skyline. This towering skyscraper reaches a height of over 828 meters, offering breathtaking views from its observation decks and luxurious experiences within its residences and hotels. Beyond the Burj, Dubai’s allure includes the extravagant Dubai Mall, the traditional souks that reflect its cultural heritage, and the adventurous desert safaris where visitors can experience dune bashing and Bedouin hospitality. With its blend of futuristic architecture, luxury shopping, and cultural treasures, Dubai remains a dazzling and unique destination for travelers from around the globe.",
     author: "Travel Guru",
     date: "August 5, 2024",
     category: "International",
+    placeholderImage: Img18,
   },
-
   // Local (Philippines) Spots
   {
     id: 6,
@@ -88,6 +106,7 @@ const BlogsData = [
     author: "Philippine Tourism",
     date: "May 15, 2024",
     category: "Local",
+    placeholderImage: Img19,
   },
   {
     id: 7,
@@ -98,6 +117,7 @@ const BlogsData = [
     author: "Philippine Tourism",
     date: "May 20, 2024",
     category: "Local",
+    placeholderImage: Img20,
   },
   {
     id: 8,
@@ -108,6 +128,7 @@ const BlogsData = [
     author: "Philippine Tourism",
     date: "June 5, 2024",
     category: "Local",
+    placeholderImage: Img21,
   },
   {
     id: 9,
@@ -118,6 +139,7 @@ const BlogsData = [
     author: "Philippine Tourism",
     date: "June 15, 2024",
     category: "Local",
+    placeholderImage: Img22,
   },
   {
     id: 10,
@@ -128,6 +150,7 @@ const BlogsData = [
     author: "Philippine Tourism",
     date: "June 20, 2024",
     category: "Local",
+    placeholderImage: Img23,
   },
   {
     id: 12,
@@ -138,6 +161,7 @@ const BlogsData = [
     author: "Local Guide",
     date: "July 25, 2024",
     category: "Local",
+    placeholderImage: Img24,
   },
 ];
 

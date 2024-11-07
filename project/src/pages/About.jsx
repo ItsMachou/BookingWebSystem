@@ -11,24 +11,21 @@ const About = () => {
             About us
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            ducimus cupiditate quo harum officia perspiciatis hic ut sunt
-            repudiandae, laboriosam expedita nostrum tempora, consectetur
-            itaque, voluptate error aperiam corrupti ullam aspernatur a!
-            Dolorem, reprehenderit amet quidem deleniti iure rem vel a enim
-            ipsam hic numquam consequatur eius id eaque accusamus repudiandae
-            impedit, quisquam non, harum inventore ratione? Tempora voluptatum
-            ut eligendi corrupti esse, repellat nesciunt illum facilis officiis?
-            Nisi quidem officiis asperiores nostrum ipsa maiores explicabo quia!
-            Corporis provident asperiores fuga eligendi rem temporibus possimus
-            autem excepturi! Facilis sunt corrupti nesciunt asperiores, ab
-            consectetur doloremque, velit a mollitia possimus quaerat!
+            At MASADYA, we believe that travel is more than just a
+            destination—it's an experience that transforms you. From the quiet,
+            tranquil beauty of Tokyo's hidden shrines to the awe-inspiring
+            grandeur of the Taj Mahal, we take you to some of the world's most
+            remarkable places. Our mission is to provide you with unforgettable
+            journeys that immerse you in rich cultures, stunning landscapes, and
+            unforgettable memories.
           </p>
           <br />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-            suscipit minus similique aliquam recusandae quisquam id nulla
-            tempora voluptate vero.
+            Whether you're a seasoned traveler or exploring new horizons, our
+            carefully curated experiences are designed to make your trip
+            extraordinary. Join us as we explore the globe, one breathtaking
+            location at a time, and let us show you the beauty of the world like
+            never before.
           </p>
         </div>
       </div>
