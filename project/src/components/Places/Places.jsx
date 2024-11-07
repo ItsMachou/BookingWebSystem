@@ -14,7 +14,7 @@ const PlacesData = [
     location: "Palawan",
     description:
       "Famous for its powdery white sands and crystal-clear waters. Boracay Beach in the Philippines is a tropical paradise that draws travelers from around the world.",
-    price: 7000,
+    price: 5000,
     type: "Relax with Nature",
   },
   {
@@ -23,7 +23,7 @@ const PlacesData = [
     location: "Palawan",
     description:
       "Puerto Princesa is known for its stunning natural wonders. This subterranean river stretches beneath limestone karsts, offering a breathtaking experience for nature lovers.",
-    price: 8000,
+    price: 5000,
     type: "Relax with Nature",
   },
   {
@@ -32,7 +32,7 @@ const PlacesData = [
     location: "Aurora",
     description:
       "The waves at Sabang Beach make it a perfect spot for beginners and pros alike. Known as the birthplace of surfing in the Philippines",
-    price: 7500,
+    price: 5000,
     type: "Relax with Nature",
   },
   {
@@ -41,7 +41,7 @@ const PlacesData = [
     location: "Japan",
     description:
       "Discover the serene beauty of Tokyo's most revered shrine, a sanctuary of tradition amidst the city's vibrant energy.",
-    price: 90000,
+    price: 5000,
     type: "Cultural Relax",
   },
   {
@@ -50,7 +50,7 @@ const PlacesData = [
     location: "India",
     description:
       "Set on the south bank of the Yamuna River in Agra, the Taj Mahal is an exquisite ivory-white marble mausoleum, celebrated for its stunning beauty and historical significance.",
-    price: 70000,
+    price: 5000,
     type: "Cultural Relax",
   },
   {
@@ -59,7 +59,7 @@ const PlacesData = [
     location: "Dubai",
     description:
       "Dubai is a city of contrasts, where modern skyscrapers meet ancient traditions. Experience the luxury and innovation of the Burj Khalifa, the world’s tallest building.",
-    price: 100000,
+    price: 5000,
     type: "Cultural Relax",
   },
 ];
