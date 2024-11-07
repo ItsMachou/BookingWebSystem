@@ -1,18 +1,18 @@
 import React from "react";
 import BlogCard from "./BlogCard";
 import Img1 from "../../assets/places/tajmahal.jpg";
-import Img2 from "../../assets/places/water.jpg";
+import Img2 from "../../assets/places/maldives2.jpg";
 import Img3 from "../../assets/places/japan.jpg";
-import Img4 from "../../assets/places/Singapore.jpg";
-import Img5 from "../../assets/places/thailand.jpg";
+import Img4 from "../../assets/places/merlion2.jpg";
+import Img5 from "../../assets/places/temple.jpg";
 import Img11 from "../../assets/places/dubai.jpg";
 
 // New images for local (Philippine) destinations
 import Img6 from "../../assets/places/boracay.jpg";
-import Img7 from "../../assets/places/puerto princesa.jpg";
+import Img7 from "../../assets/places/puertoprincesa2.jpg";
 import Img8 from "../../assets/places/baler.jpg";
-import Img9 from "../../assets/places/cavite.jpg";
-import Img10 from "../../assets/places/bukidnon.jpg";
+import Img9 from "../../assets/places/caviteshrine.jpg";
+import Img10 from "../../assets/places/bukidnon2.jpg";
 import Img12 from "../../assets/places/cebu.jpg";
 
 //Placeholder images
